@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#111827">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>My LLM</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <button id="newChat">＋</button>
+    <h1>My LLM</h1>
+    <button id="settings">⚙️</button>
+  </header>
+
+  <main id="messages">
+    <div class="welcome">
+      <h2>Remote AI</h2>
+      <p>Your iPhone is the client. The model runs remotely and streams the answer back.</p>
+    </div>
+  </main>
+
+  <div id="settingsPanel" class="panel hidden">
+    <h3>Settings</h3>
+    <label>Worker URL
+      <input id="workerUrl" placeholder="https://your-worker.workers.dev">
+    </label>
+    <label>Model
+      <select id="model">
+        <option value="openrouter/free">OpenRouter Free Router</option>
+        <option value="qwen/qwen3-coder:free">Qwen3 Coder (free, if available)</option>
+      </select>
+    </label>
+    <label>System prompt
+      <textarea id="systemPrompt">You are a highly capable coding assistant. Give accurate, practical answers. Prefer concise explanations and complete code when appropriate.</textarea>
+    </label>
+    <button id="saveSettings" class="primary">Save</button>
+  </div>
+
+  <form id="composer">
+    <textarea id="input" rows="1" placeholder="Ask anything…"></textarea>
+    <button id="send" type="submit">➤</button>
+  </form>
+
+<script src="app.js"></script>
+</body>
+</html>
